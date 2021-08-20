@@ -119,6 +119,120 @@
           }
         }
       }
+    },
+    "parent-poc-test2": {
+      "projectType": "application",
+      "root": "apps/parent-poc-test2",
+      "sourceRoot": "apps/parent-poc-test2/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/parent-poc-test2",
+            "index": "apps/parent-poc-test2/src/index.html",
+            "main": "apps/parent-poc-test2/src/main.ts",
+            "polyfills": "apps/parent-poc-test2/src/polyfills.ts",
+            "tsConfig": "apps/parent-poc-test2/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/parent-poc-test2/src/favicon.ico",
+              "apps/parent-poc-test2/src/assets"
+            ],
+            "styles": ["apps/parent-poc-test2/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/parent-poc-test2/src/environments/environment.ts",
+                  "with": "apps/parent-poc-test2/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "parent-poc-test2:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "parent-poc-test2:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "parent-poc-test2:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/parent-poc-test2/src/**/*.ts",
+              "apps/parent-poc-test2/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/parent-poc-test2"],
+          "options": {
+            "jestConfig": "apps/parent-poc-test2/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "parent-poc-test2-e2e": {
+      "root": "apps/parent-poc-test2-e2e",
+      "sourceRoot": "apps/parent-poc-test2-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/parent-poc-test2-e2e/cypress.json",
+            "tsConfig": "apps/parent-poc-test2-e2e/tsconfig.e2e.json",
+            "devServerTarget": "parent-poc-test2:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "parent-poc-test2:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/parent-poc-test2-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
     }
   },
   "cli": {
