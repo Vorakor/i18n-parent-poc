@@ -21,6 +21,8 @@
     "parent-poc-test2-e2e": {
       "tags": [],
       "implicitDependencies": ["parent-poc-test2"]
-    }
+    },
+    "page-poc": { "tags": [] },
+    "page-poc-test2": { "tags": [] }
   }
 }

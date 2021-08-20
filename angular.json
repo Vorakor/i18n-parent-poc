@@ -233,6 +233,80 @@
           }
         }
       }
+    },
+    "page-poc": {
+      "projectType": "library",
+      "root": "libs/page-poc",
+      "sourceRoot": "libs/page-poc/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/page-poc/tsconfig.lib.json",
+            "project": "libs/page-poc/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/page-poc/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/page-poc/src/**/*.ts",
+              "libs/page-poc/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/page-poc"],
+          "options": {
+            "jestConfig": "libs/page-poc/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "page-poc-test2": {
+      "projectType": "library",
+      "root": "libs/page-poc-test2",
+      "sourceRoot": "libs/page-poc-test2/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "tsConfig": "libs/page-poc-test2/tsconfig.lib.json",
+            "project": "libs/page-poc-test2/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/page-poc-test2/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/page-poc-test2/src/**/*.ts",
+              "libs/page-poc-test2/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/page-poc-test2"],
+          "options": {
+            "jestConfig": "libs/page-poc-test2/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
