@@ -14,11 +14,19 @@
       "rules": {
         "@angular-eslint/directive-selector": [
           "error",
-          { "type": "attribute", "prefix": "app", "style": "camelCase" }
+          {
+            "type": "attribute",
+            "prefix": "cricuti18nParentPocTest2",
+            "style": "camelCase"
+          }
         ],
         "@angular-eslint/component-selector": [
           "error",
-          { "type": "element", "prefix": "app", "style": "kebab-case" }
+          {
+            "type": "element",
+            "prefix": "cricuti18n-parent-poc-test2",
+            "style": "kebab-case"
+          }
         ]
       }
     },
