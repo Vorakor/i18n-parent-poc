@@ -28,6 +28,7 @@ export function HttpLoaderFactory(http: HttpClient) {
       { initialNavigation: 'enabled' }
     ),
     TranslateModule.forRoot({
+      defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,

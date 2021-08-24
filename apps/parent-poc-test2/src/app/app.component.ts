@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'cricuti18n-parent-poc-test2-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'POC - Test 2';
+  title = 'Welcome to POC - Test 2';
+  constructor(translate: TranslateService) {}
 }
