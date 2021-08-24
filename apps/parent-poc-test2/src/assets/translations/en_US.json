@@ -1,5 +1,12 @@
 {
-  "LANGUAGES": ["en", "es"],
+  "LANGUAGES": {
+    "EN": "English",
+    "ES": "Spanish"
+  },
   "HONDA": {},
-  "AUDI": {}
+  "AUDI": {},
+  "MAIN": {
+    "TITLE": "Welcome to POC - Test 2",
+    "PLEASE_SELECT_TRANSLATION": "Please select the language you wish to translate the page to:"
+  }
 }
