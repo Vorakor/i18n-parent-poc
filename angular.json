@@ -16,7 +16,7 @@
             "main": "apps/parent-poc/src/main.ts",
             "polyfills": "apps/parent-poc/src/polyfills.ts",
             "tsConfig": "apps/parent-poc/tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
+            "aot": true,
             "assets": [
               "apps/parent-poc/src/favicon.ico",
               "apps/parent-poc/src/assets"
@@ -26,6 +26,12 @@
           },
           "configurations": {
             "production": {
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -45,20 +51,15 @@
                 }
               ],
               "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "parent-poc:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "parent-poc:build:production"
@@ -180,8 +181,12 @@
           "configurations": {
             "production": {
               "browserTarget": "parent-poc-test2:build:production"
+            },
+            "development": {
+              "browserTarget": "parent-poc-test2:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
