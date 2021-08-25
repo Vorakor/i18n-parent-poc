@@ -8,7 +8,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/translations/', '.json');
 }
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +18,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule.forRoot(
       [
         {
-          path: 'page-poc',
+          path: '',
           loadChildren: () =>
             import('@parent-poc/page-poc').then(
               (module) => module.PagePocModule
