@@ -20,10 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         HttpClientModule,
         RouterModule.forRoot(
             [
-                {
-                    path: 'page-poc-test2'
-                    // loadChildren: () => import('@parent-poc/page-poc-test2').then((module) => module.PagePocTest2Module)
-                }
+                { path: 'manufacturers', loadChildren: () => import('@parent-poc/manufacturers').then((module) => module.ManufacturersModule) },
+                { path: 'dealerships', loadChildren: () => import('@parent-poc/dealerships').then((module) => module.DealershipsModule) }
             ],
             { initialNavigation: 'enabled' }
         ),

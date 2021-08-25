@@ -1,26 +1,17 @@
 {
     "npmScope": "cricuti18n-parent-poc",
     "affected": { "defaultBase": "master" },
-    "implicitDependencies": {
-        "package.json": { "dependencies": "*", "devDependencies": "*" },
-        ".eslintrc.json": "*"
-    },
+    "implicitDependencies": { "package.json": { "dependencies": "*", "devDependencies": "*" }, ".eslintrc.json": "*" },
     "tasksRunnerOptions": {
-        "default": {
-            "runner": "@nrwl/workspace/tasks-runners/default",
-            "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
-        }
+        "default": { "runner": "@nrwl/workspace/tasks-runners/default", "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] } }
     },
-    "targetDependencies": {
-        "build": [{ "target": "build", "projects": "dependencies" }]
-    },
+    "targetDependencies": { "build": [{ "target": "build", "projects": "dependencies" }] },
     "projects": {
         "parent-poc": { "tags": [] },
         "parent-poc-e2e": { "tags": [], "implicitDependencies": ["parent-poc"] },
         "parent-poc-test2": { "tags": [] },
-        "parent-poc-test2-e2e": {
-            "tags": [],
-            "implicitDependencies": ["parent-poc-test2"]
-        }
+        "parent-poc-test2-e2e": { "tags": [], "implicitDependencies": ["parent-poc-test2"] },
+        "manufacturers": { "tags": [] },
+        "dealerships": { "tags": [] }
     }
 }

@@ -226,6 +226,74 @@
                     }
                 }
             }
+        },
+        "manufacturers": {
+            "projectType": "library",
+            "root": "libs/manufacturers",
+            "sourceRoot": "libs/manufacturers/src",
+            "prefix": "manufacturers",
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/angular:ng-packagr-lite",
+                    "options": {
+                        "tsConfig": "libs/manufacturers/tsconfig.lib.json",
+                        "project": "libs/manufacturers/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "libs/manufacturers/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["libs/manufacturers/src/**/*.ts", "libs/manufacturers/src/**/*.html"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "outputs": ["coverage/libs/manufacturers"],
+                    "options": {
+                        "jestConfig": "libs/manufacturers/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                }
+            }
+        },
+        "dealerships": {
+            "projectType": "library",
+            "root": "libs/dealerships",
+            "sourceRoot": "libs/dealerships/src",
+            "prefix": "dealerships",
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/angular:ng-packagr-lite",
+                    "options": {
+                        "tsConfig": "libs/dealerships/tsconfig.lib.json",
+                        "project": "libs/dealerships/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "libs/dealerships/tsconfig.lib.prod.json"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["libs/dealerships/src/**/*.ts", "libs/dealerships/src/**/*.html"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "outputs": ["coverage/libs/dealerships"],
+                    "options": {
+                        "jestConfig": "libs/dealerships/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                }
+            }
         }
     },
     "cli": {

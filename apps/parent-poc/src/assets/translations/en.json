@@ -8,8 +8,18 @@
         "NL": "Dutch",
         "PT": "Portuguese"
     },
-    "HONDA": {},
-    "AUDI": {},
+    "DEALERSHIPS": {
+        "NEW": {},
+        "USED": {},
+        "SELECT_DEALERSHIP": "To get started, please select a dealership:"
+    },
+    "MANUFACTURERS": {
+        "ACURA": {},
+        "AUDI": {},
+        "HONDA": {},
+        "VOLKSWAGEN": {},
+        "SELECT_MAKE": "To see our inventory of vehicles, please choose the make to show all inventory from that manufacturer:"
+    },
     "MAIN": {
         "TITLE": "Welcome to POC - Test 1",
         "PLEASE_SELECT_TRANSLATION": "Please select the language you wish to translate the page to:"
