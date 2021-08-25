@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'cricuti18n-parent-poc-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'cricuti18n-parent-poc-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(translate: TranslateService) {}
+    languages: string[] = this.translate.getLangs();
+    constructor(public translate: TranslateService) {
+        this.translate.addLangs(['de', 'en', 'es', 'fr', 'it', 'nl', 'pt']);
+    }
 }

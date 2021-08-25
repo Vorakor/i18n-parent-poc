@@ -1,0 +1,17 @@
+{
+    "LANGUAGES": {
+        "DE": "Alemão",
+        "EN": "Inglês",
+        "ES": "Espanhol",
+        "FR": "Francês",
+        "IT": "Italiano",
+        "NL": "Holandês",
+        "PT": "Português"
+    },
+    "HONDA": {},
+    "AUDI": {},
+    "MAIN": {
+        "TITLE": "Bem-vindo ao POC - Teste 2",
+        "PLEASE_SELECT_TRANSLATION": "Selecione o idioma para o qual deseja traduzir a página:"
+    }
+}

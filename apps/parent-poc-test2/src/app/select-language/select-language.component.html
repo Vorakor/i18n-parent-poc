@@ -1,0 +1,5 @@
+<select (change)="setLang($event)">
+    <option *ngFor="let language of languages" [value]="language" [selected]="translate.getDefaultLang() == language ? language : ''">
+        {{ 'LANGUAGES.' + language | uppercase | translate }}
+    </option>
+</select>

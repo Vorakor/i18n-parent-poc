@@ -1,12 +1,17 @@
 {
-  "LANGUAGES": {
-    "EN": "Inglés",
-    "ES": "Español"
-  },
-  "HONDA": {},
-  "AUDI": {},
-  "MAIN": {
-    "TITLE": "Bienvenido a POC - prueba 1",
-    "PLEASE_SELECT_TRANSLATION": "Seleccione el idioma al que desea traducir la página:"
-  }
+    "LANGUAGES": {
+        "DE": "Alemán",
+        "EN": "Inglés",
+        "ES": "Español",
+        "FR": "Francés",
+        "IT": "Italiano",
+        "NL": "Holandés",
+        "PT": "Portugués"
+    },
+    "HONDA": {},
+    "AUDI": {},
+    "MAIN": {
+        "TITLE": "Bienvenido a POC - prueba 1",
+        "PLEASE_SELECT_TRANSLATION": "Seleccione el idioma al que desea traducir la página:"
+    }
 }

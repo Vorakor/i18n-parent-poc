@@ -1,0 +1,17 @@
+{
+    "LANGUAGES": {
+        "DE": "Duitse",
+        "EN": "Engels",
+        "ES": "Spaans",
+        "FR": "Frans",
+        "IT": "Italiaans",
+        "NL": "Nederlands",
+        "PT": "Portugees"
+    },
+    "HONDA": {},
+    "AUDI": {},
+    "MAIN": {
+        "TITLE": "Welkom bij POC - Toets 1",
+        "PLEASE_SELECT_TRANSLATION": "Selecteer de taal waarnaar u de pagina wilt vertalen:"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "LANGUAGES": {
+        "DE": "Deutsch",
+        "EN": "Englisch",
+        "ES": "Spanisch",
+        "FR": "Französisch",
+        "IT": "Italienisch",
+        "NL": "Niederländisch",
+        "PT": "Portugiesisch"
+    },
+    "HONDA": {},
+    "AUDI": {},
+    "MAIN": {
+        "TITLE": "Willkommen bei POC - Prüfen 2",
+        "PLEASE_SELECT_TRANSLATION": "Bitte wählen Sie die Sprache aus, in die Sie die Seite übersetzen möchten:"
+    }
+}

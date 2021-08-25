@@ -1,12 +1,17 @@
 {
-  "LANGUAGES": {
-    "EN": "English",
-    "ES": "Spanish"
-  },
-  "HONDA": {},
-  "AUDI": {},
-  "MAIN": {
-    "TITLE": "Welcome to POC - Test 1",
-    "PLEASE_SELECT_TRANSLATION": "Please select the language you wish to translate the page to:"
-  }
+    "LANGUAGES": {
+        "DE": "German",
+        "EN": "English",
+        "ES": "Spanish",
+        "FR": "French",
+        "IT": "Italian",
+        "NL": "Dutch",
+        "PT": "Portuguese"
+    },
+    "HONDA": {},
+    "AUDI": {},
+    "MAIN": {
+        "TITLE": "Welcome to POC - Test 1",
+        "PLEASE_SELECT_TRANSLATION": "Please select the language you wish to translate the page to:"
+    }
 }
