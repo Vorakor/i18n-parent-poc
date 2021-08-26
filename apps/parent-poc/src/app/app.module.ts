@@ -20,7 +20,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         HttpClientModule,
         RouterModule.forRoot(
             [
-                { path: '', loadChildren: () => import('@parent-poc/dealerships').then((module) => module.DealershipsModule) },
+                { path: '', pathMatch: 'full', redirectTo: 'dealerships' },
+                { path: 'dealerships', loadChildren: () => import('@parent-poc/dealerships').then((module) => module.DealershipsModule) },
                 { path: 'manufacturers', loadChildren: () => import('@parent-poc/manufacturers').then((module) => module.ManufacturersModule) }
             ],
             { initialNavigation: 'enabled' }
