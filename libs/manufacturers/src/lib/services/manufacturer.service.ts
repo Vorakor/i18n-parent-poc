@@ -7,6 +7,6 @@ import { IManufacturer } from '../models/manufacturer';
 })
 export class ManufacturerService {
     private _manufacturers: BehaviorSubject<IManufacturer[]> = new BehaviorSubject<IManufacturer[]>(null);
-    public $manufacturers: Observable<IManufacturer[]> = this._manufacturers.asObservable();
+    public manufacturers$: Observable<IManufacturer[]> = this._manufacturers.asObservable();
     constructor() {}
 }

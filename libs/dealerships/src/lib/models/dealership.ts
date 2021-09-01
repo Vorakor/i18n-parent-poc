@@ -2,10 +2,7 @@ export interface IDealership {
     id: number;
     name: string;
     address: IAddress;
-    inventory: {
-        new: [];
-        used: [];
-    };
+    inventory: {};
 }
 
 export interface IAddress {

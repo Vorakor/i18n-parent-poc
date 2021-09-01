@@ -1,0 +1,43 @@
+{
+    "dealerships": [
+        {
+            "id": 1,
+            "name": "Fake Dealership 1",
+            "address": {
+                "streetNumber": "45",
+                "route": "N 1600 E",
+                "unit": "",
+                "city": "Orem",
+                "locality": "Utah",
+                "country": "USA"
+            },
+            "inventory": {}
+        },
+        {
+            "id": 2,
+            "name": "Fake Dealership 2",
+            "address": {
+                "streetNumber": "45",
+                "route": "N 1600 W",
+                "unit": "",
+                "city": "Sandy",
+                "locality": "Utah",
+                "country": "USA"
+            },
+            "inventory": {}
+        },
+        {
+            "id": 3,
+            "name": "Fake Dealership 3",
+            "address": {
+                "streetNumber": "55",
+                "route": "S 1600 E",
+                "unit": "",
+                "city": "West Jordan",
+                "locality": "Utah",
+                "country": "USA"
+            },
+            "inventory": {}
+        }
+    ]
+}
