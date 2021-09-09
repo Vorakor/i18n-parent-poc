@@ -9,12 +9,19 @@
         "PT": "Portugiesisch"
     },
     "DEALERSHIPS": {
-        "INVENTORY": {},
-        "SELECT_DEALERSHIP": "To get started, please select a dealership:"
+        "SELECT_DEALERSHIP": "Wählen Sie zunächst einen Händler aus:",
+        "NEW_DEALERSHIP": "Neuwagenhändler",
+        "USED_DEALERSHIP": "Gebrauchtwagenhändler",
+        "DEALERSHIP_ID": "Händler-ID",
+        "DEALERSHIP_NAME": "Händlername",
+        "DEALERSHIP_STREET_ROUTE_UNIT": "Die Anschrift",
+        "DEALERSHIP_CITY": "Stadt",
+        "DEALERSHIP_LOCALITY": "Lokalität",
+        "DEALERSHIP_COUNTRY": "Land",
+        "REDIRECT_INVENTORY": "Siehe Inventar"
     },
     "MANUFACTURERS": {
-        "VEHICLES": {},
-        "SELECT_MAKE": "To see our inventory of vehicles, please choose the make to show all inventory from that manufacturer:"
+        "SELECT_MAKE": "Um unseren Fahrzeugbestand anzuzeigen, wählen Sie bitte die Marke aus, um den gesamten Bestand dieses Herstellers anzuzeigen:"
     },
     "MAIN": {
         "TITLE": "Willkommen bei POC - Prüfen 1",

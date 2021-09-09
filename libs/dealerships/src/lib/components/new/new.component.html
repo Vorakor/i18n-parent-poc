@@ -1,1 +1,31 @@
-<p>new works!</p>
+<div class="ncard-container">
+    <div class="ncard" *ngFor="let deal of dealerships">
+        <div class="nitem">
+            <div class="nkey" translate>DEALERSHIPS.DEALERSHIP_ID</div>
+            <div class="nvalue">{{ deal.id }}</div>
+        </div>
+        <div class="nitem">
+            <div class="nkey" translate>DEALERSHIPS.DEALERSHIP_NAME</div>
+            <div class="nvalue">{{ deal.name }}</div>
+        </div>
+        <div class="nitem">
+            <div class="nkey" translate>DEALERSHIPS.DEALERSHIP_STREET_ROUTE_UNIT</div>
+            <div class="nvalue">{{ deal.address.streetNumber + ' ' + deal.address.route + ' ' + deal.address.unit }}</div>
+        </div>
+        <div class="nitem">
+            <div class="nkey" translate>DEALERSHIPS.DEALERSHIP_CITY</div>
+            <div class="nvalue">{{ deal.address.city }}</div>
+        </div>
+        <div class="nitem">
+            <div class="nkey" translate>DEALERSHIPS.DEALERSHIP_LOCALITY</div>
+            <div class="nvalue">{{ deal.address.locality }}</div>
+        </div>
+        <div class="nitem">
+            <div class="nkey" translate>DEALERSHIPS.DEALERSHIP_COUNTRY</div>
+            <div class="nvalue">{{ deal.address.country }}</div>
+        </div>
+        <div class="nitem">
+            <button class="nbutton" (click)="seeInventory(deal.id)" translate>DEALERSHIPS.REDIRECT_INVENTORY</button>
+        </div>
+    </div>
+</div>

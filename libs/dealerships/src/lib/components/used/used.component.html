@@ -1,1 +1,31 @@
-<p>used works!</p>
+<div class="ucard-container">
+    <div class="ucard" *ngFor="let deal of dealerships">
+        <div class="uitem">
+            <div class="ukey" translate>DEALERSHIPS.DEALERSHIP_ID</div>
+            <div class="uvalue">{{ deal.id }}</div>
+        </div>
+        <div class="uitem">
+            <div class="ukey" translate>DEALERSHIPS.DEALERSHIP_NAME</div>
+            <div class="uvalue">{{ deal.name }}</div>
+        </div>
+        <div class="uitem">
+            <div class="ukey" translate>DEALERSHIPS.DEALERSHIP_STREET_ROUTE_UNIT</div>
+            <div class="uvalue">{{ deal.address.streetNumber + ' ' + deal.address.route + ' ' + deal.address.unit }}</div>
+        </div>
+        <div class="uitem">
+            <div class="ukey" translate>DEALERSHIPS.DEALERSHIP_CITY</div>
+            <div class="uvalue">{{ deal.address.city }}</div>
+        </div>
+        <div class="uitem">
+            <div class="ukey" translate>DEALERSHIPS.DEALERSHIP_LOCALITY</div>
+            <div class="uvalue">{{ deal.address.locality }}</div>
+        </div>
+        <div class="uitem">
+            <div class="ukey" translate>DEALERSHIPS.DEALERSHIP_COUNTRY</div>
+            <div class="uvalue">{{ deal.address.country }}</div>
+        </div>
+        <div class="uitem">
+            <button class="ubutton" (click)="seeInventory(deal.id)" translate>DEALERSHIPS.REDIRECT_INVENTORY</button>
+        </div>
+    </div>
+</div>

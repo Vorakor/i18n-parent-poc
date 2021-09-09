@@ -1,8 +1,10 @@
+import { IDetails } from '@child-poc/shared';
+
 export interface IDealership {
     id: number;
     name: string;
     address: IAddress;
-    inventory: {};
+    inventory: IDetails[];
 }
 
 export interface IAddress {

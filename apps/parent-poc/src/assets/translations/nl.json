@@ -10,14 +10,23 @@
     },
     "DEALERSHIPS": {
         "INVENTORY": {},
-        "SELECT_DEALERSHIP": "To get started, please select a dealership:"
+        "SELECT_DEALERSHIP": "Selecteer een dealer om te beginnen:",
+        "NEW_DEALERSHIP": "Nieuwe autodealers",
+        "USED_DEALERSHIP": "Tweedehands autodealers",
+        "DEALERSHIP_ID": "Dealer-ID",
+        "DEALERSHIP_NAME": "Naam dealer",
+        "DEALERSHIP_STREET_ROUTE_UNIT": "Adres",
+        "DEALERSHIP_CITY": "Stad",
+        "DEALERSHIP_LOCALITY": "Plaats",
+        "DEALERSHIP_COUNTRY": "Land",
+        "REDIRECT_INVENTORY": "Zie inventaris"
     },
     "MANUFACTURERS": {
         "ACURA": {},
         "AUDI": {},
         "HONDA": {},
         "VOLKSWAGEN": {},
-        "SELECT_MAKE": "To see our inventory of vehicles, please choose the make to show all inventory from that manufacturer:"
+        "SELECT_MAKE": "Om onze voorraad voertuigen te zien, kiest u het merk om alle voorraad van die fabrikant weer te geven:"
     },
     "MAIN": {
         "TITLE": "Welkom bij POC - Toets 1",

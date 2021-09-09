@@ -10,11 +10,20 @@
     },
     "DEALERSHIPS": {
         "INVENTORY": {},
-        "SELECT_DEALERSHIP": "To get started, please select a dealership:"
+        "SELECT_DEALERSHIP": "Para comenzar, seleccione un concesionario:",
+        "NEW_DEALERSHIP": "Concesionarios de coches nuevos",
+        "USED_DEALERSHIP": "Concesionarios de autos usados",
+        "DEALERSHIP_ID": "ID de concesionario",
+        "DEALERSHIP_NAME": "Nombre del concesionario",
+        "DEALERSHIP_STREET_ROUTE_UNIT": "Dirección",
+        "DEALERSHIP_CITY": "Ciudad",
+        "DEALERSHIP_LOCALITY": "Localidad",
+        "DEALERSHIP_COUNTRY": "País",
+        "REDIRECT_INVENTORY": "Ver Inventario"
     },
     "MANUFACTURERS": {
         "VEHICLES": {},
-        "SELECT_MAKE": "To see our inventory of vehicles, please choose the make to show all inventory from that manufacturer:"
+        "SELECT_MAKE": "Para ver nuestro inventario de vehículos, elija la marca para mostrar todo el inventario de ese fabricante:"
     },
     "MAIN": {
         "TITLE": "Bienvenido a POC - prueba 1",

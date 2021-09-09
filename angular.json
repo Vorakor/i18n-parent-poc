@@ -17,7 +17,15 @@
                         "polyfills": "apps/parent-poc/src/polyfills.ts",
                         "tsConfig": "apps/parent-poc/tsconfig.app.json",
                         "aot": true,
-                        "assets": ["apps/parent-poc/src/favicon.ico", "apps/parent-poc/src/assets"],
+                        "assets": [
+                            "apps/parent-poc/src/favicon.ico",
+                            "apps/parent-poc/src/assets",
+                            {
+                                "glob": "**/*",
+                                "input": "./node_modules/@child-poc/inventory/assets/",
+                                "output": "assets/inventory"
+                            }
+                        ],
                         "styles": ["apps/parent-poc/src/styles.scss"],
                         "scripts": []
                     },

@@ -1,3 +1,39 @@
 :host {
-  display: block;
+    display: block;
+    margin-top: 15px;
+}
+
+.ncard-container {
+    margin: 10px;
+    display: grid;
+    grid-gap: 10px 10px;
+    grid-template-columns: 50% 50%;
+    // grid-auto-flow: row dense;
+    // grid-template-rows: auto;
+    place-items: center;
+    place-content: center;
+}
+
+.ncard {
+    grid-column: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+
+.nitem {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.nkey,
+.nvalue {
+    flex: 1 1 50%;
+    align-self: flex-start;
+}
+
+.nbutton {
+    flex: 1 1 100%;
+    align-self: flex-start;
 }

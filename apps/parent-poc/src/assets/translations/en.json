@@ -9,15 +9,25 @@
         "PT": "Portuguese"
     },
     "DEALERSHIPS": {
-        "INVENTORY": {},
-        "SELECT_DEALERSHIP": "To get started, please select a dealership:"
+        "SELECT_DEALERSHIP": "To get started, please select a dealership:",
+        "NEW_DEALERSHIP": "New Car Dealerships",
+        "USED_DEALERSHIP": "Used Car Dealerships",
+        "DEALERSHIP_ID": "Dealership ID",
+        "DEALERSHIP_NAME": "Dealership Name",
+        "DEALERSHIP_STREET_ROUTE_UNIT": "Address",
+        "DEALERSHIP_CITY": "City",
+        "DEALERSHIP_LOCALITY": "Locality",
+        "DEALERSHIP_COUNTRY": "Country",
+        "REDIRECT_INVENTORY": "See Inventory"
     },
     "MANUFACTURERS": {
-        "VEHICLES": {},
         "SELECT_MAKE": "To see our inventory of vehicles, please choose the make to show all inventory from that manufacturer:"
     },
     "MAIN": {
         "TITLE": "Welcome to POC - Test 1",
         "PLEASE_SELECT_TRANSLATION": "Please select the language you wish to translate the page to:"
+    },
+    "INVENTORY": {
+        "WELCOME_MESSAGE": "Thanks for visiting us!  Here's all of our available vehicles."
     }
 }

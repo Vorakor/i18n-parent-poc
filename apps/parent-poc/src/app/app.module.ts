@@ -5,13 +5,16 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { SelectLanguageComponent } from './select-language/select-language.component';
 import { FormsModule } from '@angular/forms';
 import { LowerCasePipe, UpperCasePipe } from '@angular/common';
 
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http, './assets/translations/', '.json');
+    return new MultiTranslateHttpLoader(http, [
+        { prefix: './assets/translations/', suffix: '.json' },
+        { prefix: './assets/inventory/i18n/', suffix: '.json' }
+    ]);
 }
 @NgModule({
     declarations: [AppComponent, SelectLanguageComponent],
@@ -22,7 +25,9 @@ export function HttpLoaderFactory(http: HttpClient) {
             [
                 { path: '', pathMatch: 'full', redirectTo: 'dealerships' },
                 { path: 'dealerships', loadChildren: () => import('@parent-poc/dealerships').then((module) => module.DealershipsModule) },
-                { path: 'manufacturers', loadChildren: () => import('@parent-poc/manufacturers').then((module) => module.ManufacturersModule) }
+                { path: 'manufacturers', loadChildren: () => import('@parent-poc/manufacturers').then((module) => module.ManufacturersModule) },
+                { path: 'inventory', loadChildren: () => import('@child-poc/inventory').then((module) => module.InventoryModule) },
+                { path: 'vehicle-details', loadChildren: () => import('@child-poc/vehicle-details').then((module) => module.VehicleDetailsModule) }
             ],
             { initialNavigation: 'enabled' }
         ),

@@ -1,1 +1,24 @@
-{}
+{
+    "manufacturers": [
+        {
+            "id": 1,
+            "name": "Volkswagen",
+            "models": []
+        },
+        {
+            "id": 2,
+            "name": "Audi",
+            "models": []
+        },
+        {
+            "id": 3,
+            "name": "Honda",
+            "models": []
+        },
+        {
+            "id": 4,
+            "name": "Acura",
+            "models": []
+        }
+    ]
+}
