@@ -31,5 +31,37 @@
     "MAIN": {
         "TITLE": "Bem-vindo ao POC - Teste 1",
         "PLEASE_SELECT_TRANSLATION": "Selecione o idioma para o qual deseja traduzir a página:"
+    },
+    "INVENTORY": {
+        "WELCOME_MESSAGE": "Obrigado por nos visitar! Abaixo estão todos os nossos veículos disponíveis atualmente.",
+        "NEW_VEHICLES_LISTING": "Todos os novos veículos 2022 em estoque agora!",
+        "USED_VEHICLES_LISTING": "Veículos usados e em bom estado em estoque:"
+    },
+    "DETAILS": {
+        "HOME": "Detalhes do veículo"
+    },
+    "VEHICLES": {
+        "VEHICLE_GO_TO_DETAILS": "Vá para detalhes:",
+        "VEHICLE_ID": "Número de inventário",
+        "VEHICLE_MAKE": "Fabricante",
+        "VEHICLE_MODEL": "Modelo",
+        "VEHICLE_YEAR": "Ano",
+        "VEHICLE_CONFIGURATION": "Aparar",
+        "VEHICLE_ENGINE_TYPE": "Tipo de transmissão",
+        "VEHICLE_WHEEL_SIZE": "Tamanho da roda",
+        "VEHICLE_ALL_WHEEL_DRIVE": "Tudo Roda Dirigir",
+        "VEHICLE_FUEL_TYPE": "Tipo de combustível",
+        "VEHICLE_MILEAGE": "Quilometragem",
+        "VEHICLE_ODOMETER": "Odômetro",
+        "TRANSMISSION_TYPE_AUTO": "Automático",
+        "TRANSMISSION_TYPE_MANU": "Manual",
+        "AWD_TRUE": "Verdade",
+        "AWD_FALSE": "Falso",
+        "FUEL_TYPE_GAS": "Gasolina",
+        "FUEL_TYPE_NAT": "Gás natural",
+        "FUEL_TYPE_DIE": "Diesel",
+        "MILEAGE_CITY": "Cidade",
+        "MILEAGE_HIGH": "Rodovia",
+        "MILEAGE_COMB": "Combinado"
     }
 }

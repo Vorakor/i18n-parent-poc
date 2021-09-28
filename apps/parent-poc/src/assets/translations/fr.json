@@ -28,5 +28,37 @@
     "MAIN": {
         "TITLE": "Bienvenue au POC - Test 1",
         "PLEASE_SELECT_TRANSLATION": "Veuillez sélectionner la langue dans laquelle vous souhaitez traduire la page:"
+    },
+    "INVENTORY": {
+        "WELCOME_MESSAGE": "Merci de nous rendre visite ! Vous trouverez ci-dessous tous nos véhicules actuellement disponibles.",
+        "NEW_VEHICLES_LISTING": "Tous les nouveaux véhicules 2022 en stock maintenant!",
+        "USED_VEHICLES_LISTING": "Véhicules d'occasion et en bon état en stock :"
+    },
+    "DETAILS": {
+        "HOME": "Les détails du véhicule"
+    },
+    "VEHICLES": {
+        "VEHICLE_GO_TO_DETAILS": "Accédez aux détails :",
+        "VEHICLE_ID": "Numéro d'inventaire",
+        "VEHICLE_MAKE": "Fabricant",
+        "VEHICLE_MODEL": "Modèle",
+        "VEHICLE_YEAR": "Année",
+        "VEHICLE_CONFIGURATION": "Garniture",
+        "VEHICLE_ENGINE_TYPE": "Type de transmission",
+        "VEHICLE_WHEEL_SIZE": "Taille de roue",
+        "VEHICLE_ALL_WHEEL_DRIVE": "Toutes roues motrices",
+        "VEHICLE_FUEL_TYPE": "Type de carburant",
+        "VEHICLE_MILEAGE": "Kilométrage",
+        "VEHICLE_ODOMETER": "Odomètre",
+        "TRANSMISSION_TYPE_AUTO": "Automatique",
+        "TRANSMISSION_TYPE_MANU": "Manuelle",
+        "AWD_TRUE": "Vrai",
+        "AWD_FALSE": "Faux",
+        "FUEL_TYPE_GAS": "De l'essence",
+        "FUEL_TYPE_NAT": "Gaz naturel",
+        "FUEL_TYPE_DIE": "Diesel",
+        "MILEAGE_CITY": "Ville",
+        "MILEAGE_HIGH": "Autoroute",
+        "MILEAGE_COMB": "Combiné"
     }
 }

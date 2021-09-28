@@ -5,16 +5,14 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
+// import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 import { SelectLanguageComponent } from './select-language/select-language.component';
 import { FormsModule } from '@angular/forms';
 import { LowerCasePipe, UpperCasePipe } from '@angular/common';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
-    return new MultiTranslateHttpLoader(http, [
-        { prefix: './assets/translations/', suffix: '.json' },
-        { prefix: './assets/inventory/i18n/', suffix: '.json' }
-    ]);
+    return new TranslateHttpLoader(http, './assets/translations/', '.json');
 }
 @NgModule({
     declarations: [AppComponent, SelectLanguageComponent],

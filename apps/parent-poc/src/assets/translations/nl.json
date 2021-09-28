@@ -31,5 +31,37 @@
     "MAIN": {
         "TITLE": "Welkom bij POC - Toets 1",
         "PLEASE_SELECT_TRANSLATION": "Selecteer de taal waarnaar u de pagina wilt vertalen:"
+    },
+    "INVENTORY": {
+        "WELCOME_MESSAGE": "Bedankt voor uw bezoek! Hieronder vindt u al onze momenteel beschikbare voertuigen.",
+        "NEW_VEHICLES_LISTING": "Alle nieuwe 2022 voertuigen nu op voorraad!",
+        "USED_VEHICLES_LISTING": "Gebruikte en in goede staat verkerende voertuigen op voorraad:"
+    },
+    "DETAILS": {
+        "HOME": "Voertuig details"
+    },
+    "VEHICLES": {
+        "VEHICLE_GO_TO_DETAILS": "Ga naar details:",
+        "VEHICLE_ID": "Inventaris nummer",
+        "VEHICLE_MAKE": "Fabrikant",
+        "VEHICLE_MODEL": "Model",
+        "VEHICLE_YEAR": "Jaar",
+        "VEHICLE_CONFIGURATION": "Trimmen",
+        "VEHICLE_ENGINE_TYPE": "Transmissietype",
+        "VEHICLE_WHEEL_SIZE": "Wielgrootte",
+        "VEHICLE_ALL_WHEEL_DRIVE": "Vierwielaandrijving",
+        "VEHICLE_FUEL_TYPE": "Brandstoftype",
+        "VEHICLE_MILEAGE": "Kilometerstand",
+        "VEHICLE_ODOMETER": "Kilometerteller",
+        "TRANSMISSION_TYPE_AUTO": "Automatisch",
+        "TRANSMISSION_TYPE_MANU": "Handmatig",
+        "AWD_TRUE": "Waar",
+        "AWD_FALSE": "Niet waar",
+        "FUEL_TYPE_GAS": "Benzine",
+        "FUEL_TYPE_NAT": "Natuurlijk gas",
+        "FUEL_TYPE_DIE": "Diesel",
+        "MILEAGE_CITY": "Stad",
+        "MILEAGE_HIGH": "Snelweg",
+        "MILEAGE_COMB": "Gecombineerd"
     }
 }

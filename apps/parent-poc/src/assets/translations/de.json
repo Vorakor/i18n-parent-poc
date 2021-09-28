@@ -26,5 +26,37 @@
     "MAIN": {
         "TITLE": "Willkommen bei POC - Prüfen 1",
         "PLEASE_SELECT_TRANSLATION": "Bitte wählen Sie die Sprache aus, in die Sie die Seite übersetzen möchten:"
+    },
+    "INVENTORY": {
+        "WELCOME_MESSAGE": "Vielen Dank für Ihren Besuch! Nachfolgend finden Sie alle unsere aktuell verfügbaren Fahrzeuge.",
+        "NEW_VEHICLES_LISTING": "Alle neuen 2022 Fahrzeuge jetzt auf Lager!",
+        "USED_VEHICLES_LISTING": "Gebrauchte und gut erhaltene Fahrzeuge auf Lager:"
+    },
+    "DETAILS": {
+        "HOME": "Fahrzeugangaben"
+    },
+    "VEHICLES": {
+        "VEHICLE_GO_TO_DETAILS": "Gehe zu Einzelheiten:",
+        "VEHICLE_ID": "Inventar nummer",
+        "VEHICLE_MAKE": "Hersteller",
+        "VEHICLE_MODEL": "Modell",
+        "VEHICLE_YEAR": "Jahr",
+        "VEHICLE_CONFIGURATION": "Trimmen",
+        "VEHICLE_ENGINE_TYPE": "Übertragungsart",
+        "VEHICLE_WHEEL_SIZE": "Radgröße",
+        "VEHICLE_ALL_WHEEL_DRIVE": "Allradantrieb",
+        "VEHICLE_FUEL_TYPE": "Treibstoffart",
+        "VEHICLE_MILEAGE": "Kilometerstand",
+        "VEHICLE_ODOMETER": "Kilometerzähler",
+        "TRANSMISSION_TYPE_AUTO": "Automatisch",
+        "TRANSMISSION_TYPE_MANU": "Handbuch",
+        "AWD_TRUE": "Wahr",
+        "AWD_FALSE": "Falsch",
+        "FUEL_TYPE_GAS": "Benzin",
+        "FUEL_TYPE_NAT": "Erdgas",
+        "FUEL_TYPE_DIE": "Diesel",
+        "MILEAGE_CITY": "Stadt",
+        "MILEAGE_HIGH": "Autobahn",
+        "MILEAGE_COMB": "Kombiniert"
     }
 }

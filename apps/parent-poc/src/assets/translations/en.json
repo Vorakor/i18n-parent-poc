@@ -28,6 +28,35 @@
         "PLEASE_SELECT_TRANSLATION": "Please select the language you wish to translate the page to:"
     },
     "INVENTORY": {
-        "WELCOME_MESSAGE": "Thanks for visiting us!  Here's all of our available vehicles."
+        "WELCOME_MESSAGE": "Thanks for visiting us!  Below are all of our currently available vehicles.",
+        "NEW_VEHICLES_LISTING": "All new 2022 vehicles in stock now!",
+        "USED_VEHICLES_LISTING": "Used and good condition vehicles in stock:"
+    },
+    "DETAILS": {
+        "HOME": "Vehicle Details"
+    },
+    "VEHICLES": {
+        "VEHICLE_GO_TO_DETAILS": "Go to details:",
+        "VEHICLE_ID": "Inventory number",
+        "VEHICLE_MAKE": "Manufacturer",
+        "VEHICLE_MODEL": "Model",
+        "VEHICLE_YEAR": "Year",
+        "VEHICLE_CONFIGURATION": "Trim",
+        "VEHICLE_ENGINE_TYPE": "Transmission Type",
+        "VEHICLE_WHEEL_SIZE": "Wheel Size",
+        "VEHICLE_ALL_WHEEL_DRIVE": "All Wheel Drive",
+        "VEHICLE_FUEL_TYPE": "Fuel Type",
+        "VEHICLE_MILEAGE": "Mileage",
+        "VEHICLE_ODOMETER": "Odometer",
+        "TRANSMISSION_TYPE_AUTO": "Automatic",
+        "TRANSMISSION_TYPE_MANU": "Manual",
+        "AWD_TRUE": "True",
+        "AWD_FALSE": "False",
+        "FUEL_TYPE_GAS": "Gasoline",
+        "FUEL_TYPE_NAT": "Natural Gas",
+        "FUEL_TYPE_DIE": "Diesel",
+        "MILEAGE_CITY": "City",
+        "MILEAGE_HIGH": "Highway",
+        "MILEAGE_COMB": "Combined"
     }
 }
