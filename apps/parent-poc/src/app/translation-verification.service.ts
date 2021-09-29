@@ -9,11 +9,10 @@ import { distinctUntilChanged, filter } from 'rxjs/operators';
 @Injectable({
     providedIn: 'root'
 })
-export class TranslationVerificationService implements OnDestroy {
+export class TranslationVerificationService {
     public childTranslationKeys: string[] = [...InventoryKeys, ...VehicleDetailsKeys, ...VehiclesKeys];
     public parentTranslationKeys: string[] = [];
     private invalidKeys: string[] = [];
-    private subs: Subscription[] = [];
     constructor(private translate: TranslateService) {}
 
     async loadParentTranslations(): Promise<void> {
@@ -45,9 +44,5 @@ export class TranslationVerificationService implements OnDestroy {
 
     getInvalidKeys(): string[] {
         return this.invalidKeys;
-    }
-
-    ngOnDestroy() {
-        this.subs.forEach((subscription) => subscription.unsubscribe());
     }
 }
