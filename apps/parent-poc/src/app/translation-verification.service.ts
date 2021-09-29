@@ -12,21 +12,39 @@ import { distinctUntilChanged, filter } from 'rxjs/operators';
 export class TranslationVerificationService implements OnDestroy {
     public childTranslationKeys: string[] = [...InventoryKeys, ...VehicleDetailsKeys, ...VehiclesKeys];
     public parentTranslationKeys: string[] = [];
+    private invalidKeys: string[] = [];
     private subs: Subscription[] = [];
-    constructor(private translate: TranslateService) {
-        const gT = this.translate
+    constructor(private translate: TranslateService) {}
+
+    async loadParentTranslations(): Promise<void> {
+        return this.translate
             .getTranslation(this.translate.currentLang ? this.translate.currentLang : this.translate.defaultLang)
             .pipe(
                 distinctUntilChanged(),
                 filter((trans) => trans !== null || trans !== undefined)
             )
-            .subscribe((translations) => {
-                console.log(Object.keys(translations));
-                console.log(this.childTranslationKeys);
-                if (translations) {
-                    this.parentTranslationKeys = Object.keys(translations);
+            .toPromise()
+            .then((trans) => {
+                this.parentTranslationKeys = Object.keys(trans);
+            });
+    }
+
+    validateTranslations(): boolean | void {
+        this.invalidKeys = [];
+        if (this.parentTranslationKeys.length > 0) {
+            this.childTranslationKeys.forEach((key) => {
+                if (this.parentTranslationKeys.indexOf(key) == -1) {
+                    if (this.invalidKeys.indexOf(key) == -1) {
+                        this.invalidKeys.push(key);
+                    }
                 }
             });
+            return this.invalidKeys.length > 0 ? false : true;
+        }
+    }
+
+    getInvalidKeys(): string[] {
+        return this.invalidKeys;
     }
 
     ngOnDestroy() {

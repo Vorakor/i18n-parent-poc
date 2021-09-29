@@ -32,10 +32,10 @@ export class HomeComponent implements OnInit {
             }
         });
         // const detailsTranslation = this.detService.translations$.subscribe((translations) => console.log(translations));
-        const detailsTranslation = this.translation
-            .getTranslation(this.translation.currentLang ? this.translation.currentLang : this.translation.defaultLang)
-            .subscribe((trans) => console.log(trans));
-        this.dealService.subs.push(detailsTranslation);
+        // const detailsTranslation = this.translation
+        //     .getTranslation(this.translation.currentLang ? this.translation.currentLang : this.translation.defaultLang)
+        //     .subscribe((trans) => console.log(trans));
+        // this.dealService.subs.push(detailsTranslation);
         // this.translation.setTranslation(this.translation.currentLang, this.detService.getTranslations(this.translation.currentLang), true);
     }
 

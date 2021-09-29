@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { TranslationVerificationService } from './translation-verification.service';
 
@@ -7,9 +7,18 @@ import { TranslationVerificationService } from './translation-verification.servi
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     languages: string[] = this.translate.getLangs();
     constructor(public translate: TranslateService, public transVerify: TranslationVerificationService) {
         this.translate.addLangs(['de', 'en', 'es', 'fr', 'it', 'nl', 'pt']);
+    }
+
+    async ngOnInit() {
+        await this.transVerify.loadParentTranslations();
+        if (this.transVerify.validateTranslations()) {
+            console.log('Translation keys are valid');
+        } else {
+            throw Error(`Invalid translation keys: ${this.transVerify.getInvalidKeys()}`);
+        }
     }
 }
