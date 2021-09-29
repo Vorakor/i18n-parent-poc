@@ -10,6 +10,7 @@ import { SelectLanguageComponent } from './select-language/select-language.compo
 import { FormsModule } from '@angular/forms';
 import { LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslationVerificationService } from './translation-verification.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/translations/', '.json');
@@ -39,7 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         }),
         FormsModule
     ],
-    providers: [TranslatePipe, UpperCasePipe, LowerCasePipe],
+    providers: [TranslatePipe, UpperCasePipe, LowerCasePipe, TranslationVerificationService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
