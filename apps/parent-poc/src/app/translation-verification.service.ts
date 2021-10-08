@@ -1,9 +1,8 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import { TranslationKeys as InventoryKeys } from '@child-poc/inventory';
-import { TranslationKeys as VehicleDetailsKeys } from '@child-poc/vehicle-details';
-import { TranslationKeys as VehiclesKeys } from '@child-poc/vehicles';
+import { Injectable } from '@angular/core';
+import { i18nKeys as InventoryKeys } from '@child-poc/inventory';
+import { i18nKeys as VehicleDetailsKeys } from '@child-poc/vehicle-details';
+import { i18nKeys as VehiclesKeys } from '@child-poc/vehicles';
 import { TranslateService } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
 import { distinctUntilChanged, filter } from 'rxjs/operators';
 
 @Injectable({
@@ -33,9 +32,9 @@ export class TranslationVerificationService {
         if (this.parentTranslationKeys.length > 0) {
             this.childTranslationKeys.forEach((key) => {
                 if (this.parentTranslationKeys.indexOf(key) == -1) {
-                    if (this.invalidKeys.indexOf(key) == -1) {
-                        this.invalidKeys.push(key);
-                    }
+                    // if (this.invalidKeys.indexOf(key) == -1) {
+                    this.invalidKeys.push(key);
+                    // }
                 }
             });
             return this.invalidKeys.length > 0 ? false : true;

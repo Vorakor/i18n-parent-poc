@@ -1,0 +1,28 @@
+{
+    "cli": "nx",
+    "id": "i18n-verification",
+    "type": "object",
+    "properties": {
+        "libraryCheck": {
+            "type": "string",
+            "description": "What libraries to look for translation files",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            }
+        },
+        "skipCheck": {
+            "type": "boolean",
+            "description": "Skip translation key check"
+        },
+        "translationFile": {
+            "type": "string",
+            "description": "Translation file you want to check (if not specified then a default location will be used), command assumes path is from root directory.",
+            "$default": {
+                "$source": "argv",
+                "index": 2
+            }
+        }
+    },
+    "required": ["libraryCheck"]
+}
