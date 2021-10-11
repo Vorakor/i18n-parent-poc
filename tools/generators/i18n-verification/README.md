@@ -6,6 +6,8 @@ This tool is broken into two different kinds of verification, the first being ch
 
 This tool is meant to verify if the parent has all the keys from the children and that the children and parent have the same translation values.
 
+Currently this tool is built for Nx workspaces.
+
 ## Installation
 
 1. Add `/tools/generators/i18n-verification` to the root of the repository.
