@@ -93,8 +93,8 @@
         "typescript": "~4.0.5"
     },
     "translatedLibraries": [
-        "@child-poc/vehicles",
         "@child-poc/inventory",
+        "@child-poc/vehicles",
         "@child-poc/vehicle-details"
     ]
 }

@@ -20,7 +20,13 @@ export default async function (host: Tree, schema: any) {
     } else {
         lInstalledLibs.push(...lPackageJson.translatedLibraries);
     }
-    await checkKeys(schema.libraryCheck ? true : false, lInstalledLibs, parentKeys, lTranslationJson);
+    await checkKeys(
+        schema.libraryCheck ? true : false,
+        lInstalledLibs,
+        parentKeys,
+        lTranslationJson,
+        schema.childFileName ? schema.childFileName : ''
+    );
     console.log('Translation keys are all accounted for and correct.');
 }
 
@@ -34,11 +40,10 @@ interface differentKeys extends invalidKeys {
     child_value: string;
 }
 
-async function checkKeys(libraryCheck: boolean = false, libraries: string[], pKeys: string[], parentJson: any) {
+async function checkKeys(libraryCheck: boolean = false, libraries: string[], pKeys: string[], parentJson: any, childFileName: string = '') {
     const invalidKeys: invalidKeys[] = [];
     const differentKeys: differentKeys[] = [];
     for (let library of libraries) {
-        console.log(library);
         let result: any = null;
         try {
             result = await import(library);
@@ -48,7 +53,9 @@ async function checkKeys(libraryCheck: boolean = false, libraries: string[], pKe
         if (libraryCheck) {
             // If libraryCheck is true then we scanned the package.json's list of dependencies for a specific prefix, now we need to check if any of those dependencies have translations.
             if (Object.keys(result).indexOf('i18nKeys') >= 0) {
-                const lTranslationJson = JSON.parse(await fs.readFile(`./node_modules/${library}/src/i18n.json`, { encoding: 'utf8' }));
+                const lTranslationJson = JSON.parse(
+                    await fs.readFile(`./node_modules/${library}/src/${childFileName ? childFileName : 'i18n.json'}`, { encoding: 'utf8' })
+                );
                 result.i18nKeys.forEach((key: string) => {
                     if (pKeys.indexOf(key) == -1) {
                         invalidKeys.push({ key, library });
@@ -62,7 +69,9 @@ async function checkKeys(libraryCheck: boolean = false, libraries: string[], pKe
             if (Object.keys(result).indexOf('i18nKeys') >= 0) {
                 let lTranslationJson: any = '';
                 try {
-                    lTranslationJson = JSON.parse(await fs.readFile(`./node_modules/${library}/src/i18n.json`, { encoding: 'utf8' }));
+                    lTranslationJson = JSON.parse(
+                        await fs.readFile(`./node_modules/${library}/src/${childFileName ? childFileName : 'i18n.json'}`, { encoding: 'utf8' })
+                    );
                 } catch (e) {
                     throw Error(`Could not find translation json file in order to compare translation values! Error: ${e}`);
                 }
@@ -74,7 +83,9 @@ async function checkKeys(libraryCheck: boolean = false, libraries: string[], pKe
                     }
                 });
             } else {
-                throw Error('Required translation file not found!');
+                throw Error(
+                    `Required translation file not found! Library ${library} does not have the required translation file contained within the package.`
+                );
             }
         }
     }

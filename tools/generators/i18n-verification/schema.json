@@ -22,6 +22,14 @@
                 "$source": "argv",
                 "index": 2
             }
+        },
+        "childFileName": {
+            "type": "string",
+            "description": "Translation file name from child library(s).  Please ensure this is the path from the /src folder.",
+            "$default": {
+                "$source": "argv",
+                "index": 3
+            }
         }
     },
     "required": []
