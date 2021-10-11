@@ -9,7 +9,7 @@ This tool is meant to verify if the parent has all the keys from the children an
 ## Installation
 
 1. Add `/tools/generators/i18n-verification` to the root of the repository.
-1. Add the code into the folder above for the `index.ts` and schema.json files (`index.ts` is the script itself, while schema.json holds the command-line arguments).
+1. Add the code into the folder above for the `index.ts` and `schema.json` files (`index.ts` is the script itself, while `schema.json` holds the command-line arguments).
 1. Add command to `package.json` as follows: `"verify-translation": "nx workspace-generator i18n-verification"`
 1. Two options for this next step:
     - Ensure that translations exist at the following path: `./apps/<application-name>/src/assets/translations/en.json`
