@@ -91,5 +91,10 @@
         "ts-jest": "27.0.3",
         "ts-node": "7.0.1",
         "typescript": "~4.0.5"
-    }
+    },
+    "translatedLibraries": [
+        "@child-poc/vehicles",
+        "@child-poc/inventory",
+        "@child-poc/vehicle-details"
+    ]
 }

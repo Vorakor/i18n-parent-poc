@@ -11,12 +11,16 @@ export default async function (host: Tree, schema: any) {
         lTranslationJson = JSON.parse(await fs.readFile('./apps/parent-poc/src/assets/translations/en.json', { encoding: 'utf8' }));
     }
     const parentKeys = Object.keys(lTranslationJson).filter((k) => k !== 'default');
-    Object.keys(lPackageJson.dependencies).forEach((key) => {
-        if (key.startsWith(schema.libraryCheck)) {
-            lInstalledLibs.push(key);
-        }
-    });
-    await checkKeys(lInstalledLibs, parentKeys, lTranslationJson);
+    if (schema.libraryCheck) {
+        Object.keys(lPackageJson.dependencies).forEach((key) => {
+            if (key.startsWith(schema.libraryCheck)) {
+                lInstalledLibs.push(key);
+            }
+        });
+    } else {
+        lInstalledLibs.push(...lPackageJson.translatedLibraries);
+    }
+    await checkKeys(schema.libraryCheck ? true : false, lInstalledLibs, parentKeys, lTranslationJson);
     console.log('Translation keys are all accounted for and correct.');
 }
 
@@ -30,42 +34,66 @@ interface differentKeys extends invalidKeys {
     child_value: string;
 }
 
-async function checkKeys(libraries: string[], pKeys: string[], parentJson: any) {
+async function checkKeys(libraryCheck: boolean = false, libraries: string[], pKeys: string[], parentJson: any) {
     const invalidKeys: invalidKeys[] = [];
     const differentKeys: differentKeys[] = [];
     for (let library of libraries) {
+        console.log(library);
         let result: any = null;
         try {
             result = await import(library);
         } catch (e) {
             throw Error(`Unable to import: ${e}`);
         }
-        if (Object.keys(result).indexOf('i18nKeys') >= 0) {
-            const lTranslationJson = JSON.parse(await fs.readFile(`./node_modules/${library}/src/assets/i18n.json`, { encoding: 'utf8' }));
-            result.i18nKeys.forEach((key: string) => {
-                if (pKeys.indexOf(key) == -1) {
-                    invalidKeys.push({ key, library });
-                } else if (parentJson[key] != lTranslationJson[key]) {
-                    differentKeys.push({ key, library, parent_value: parentJson[key], child_value: lTranslationJson[key] });
+        if (libraryCheck) {
+            // If libraryCheck is true then we scanned the package.json's list of dependencies for a specific prefix, now we need to check if any of those dependencies have translations.
+            if (Object.keys(result).indexOf('i18nKeys') >= 0) {
+                const lTranslationJson = JSON.parse(await fs.readFile(`./node_modules/${library}/src/i18n.json`, { encoding: 'utf8' }));
+                result.i18nKeys.forEach((key: string) => {
+                    if (pKeys.indexOf(key) == -1) {
+                        invalidKeys.push({ key, library });
+                    } else if (parentJson[key] != lTranslationJson[key]) {
+                        differentKeys.push({ key, library, parent_value: parentJson[key], child_value: lTranslationJson[key] });
+                    }
+                });
+            }
+        } else {
+            // If libraryCheck is false then we are using a defined list of libraries that *should* have translations, so error if we don't find translations.
+            if (Object.keys(result).indexOf('i18nKeys') >= 0) {
+                let lTranslationJson: any = '';
+                try {
+                    lTranslationJson = JSON.parse(await fs.readFile(`./node_modules/${library}/src/i18n.json`, { encoding: 'utf8' }));
+                } catch (e) {
+                    throw Error(`Could not find translation json file in order to compare translation values! Error: ${e}`);
                 }
-            });
+                result.i18nKeys.forEach((key: string) => {
+                    if (pKeys.indexOf(key) == -1) {
+                        invalidKeys.push({ key, library });
+                    } else if (parentJson[key] != lTranslationJson[key]) {
+                        differentKeys.push({ key, library, parent_value: parentJson[key], child_value: lTranslationJson[key] });
+                    }
+                });
+            } else {
+                throw Error('Required translation file not found!');
+            }
         }
     }
+    let missingString: string = '';
+    let differentString: string = '';
     if (invalidKeys && invalidKeys.length > 0) {
-        throw Error(
-            `Missing translation keys! Please verify that your translation key is contained in the parent translation file by reviewing the list below --v\n${invalidKeyPrintout(
-                invalidKeys
-            )}`
-        );
-    } else if (differentKeys && differentKeys.length > 0) {
-        throw Error(
-            `Translation key in parent is different than key in child! Please verify if one has been recently updated by reviewing the list below --v\n${invalidKeyPrintout(
-                differentKeys
-            )}`
-        );
-    } else {
-        return;
+        missingString = `Missing translation keys! Please verify that your translation key is contained in the parent translation file by reviewing the list below --v\n\n${invalidKeyPrintout(
+            invalidKeys
+        )}`;
     }
+    if (differentKeys && differentKeys.length > 0) {
+        differentString = `Translation value in parent is different than value in child! Please verify if one has been recently updated by reviewing the list below --v\n\n${invalidKeyPrintout(
+            differentKeys
+        )}`;
+    }
+    if (missingString || differentString) {
+        throw Error(`${missingString}${missingString && differentString ? '\n\n--------\n\n' : ''}${differentString}`);
+    }
+    return;
 }
 
 function invalidKeyPrintout(iKeys: invalidKeys[] | differentKeys[]) {
@@ -79,7 +107,7 @@ function invalidKeyPrintout(iKeys: invalidKeys[] | differentKeys[]) {
             printStatements.push(`Translation Key: ${ik.key}, Library: ${ik.library}`);
         }
     });
-    return printStatements.join('\n');
+    return printStatements.join('\n\n');
 }
 
 function instanceOf(object: any): object is differentKeys {
