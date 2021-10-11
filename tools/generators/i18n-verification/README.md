@@ -13,8 +13,48 @@ This tool is broken into two different kinds of verification, the first being ch
     - Ensure that translations exist at the following path: `./apps/<application-name>/src/assets/translations/en.json`
     - Or change the default within the code to reflect the path where the translation files are (the default path should be somewhere around line 11 of the script in `index.ts`).
 1. Create new key in `package.json` at root, name the key `translatedLibraries` and list all of the libraries that are being imported into this application that you expect to have translation files in.
+    - (Optional) Either do the step above, or always pass in the libraryCheck parameter with a prefix for the script to scan through and check for translation files.
 
--   (Optional) Either do the step above, or always pass in the libraryCheck parameter with a prefix for the script to scan through and check for translation files.
+At this point the parent repo here should be pretty well setup, now to fix the children:
+
+1. Locate the ng-package.json file for the library / project that needs translation files, add the following line, but feel free to customize the path and file name so long as you account for it within the script: `"assets": ["./src/i18n.json"],`.
+1. Now you will need to add the translation file at that path, so add a `i18n.json` file at the library / project's src/ root, or the other path that you decided on, so long as it is contained within src/.
+1. Now in your library's index.ts file, or your project's public-api.ts file, add the import line to bring in the json file: `import * as keys from './i18n.json';`.
+1. Let's finish off the index.ts / public-api.ts file by adding the const export: `export const i18nKeys = Object.keys(keys).filter((k) => k !== 'default);`.
+1. Let's not forget to add a `"resolveJsonModule": true,` to your repo's `tsconfig.base.json` file.
+1. Now more as a precaution than anything else, let's tweak the `angular.json` file to make sure that our library / project builds with the translation files included and with minified code too, so change this:
+
+```
+"build": {
+    "builder": "@nrwl/angular:ng-packagr-lite",
+    "options": {
+        "tsConfig": "libs/manufacturers/tsconfig.lib.json",
+        "project": "libs/manufacturers/ng-package.json"
+    },
+    "configurations": {
+        "production": {
+            "tsConfig": "libs/manufacturers/tsconfig.lib.prod.json"
+        }
+    }
+},
+```
+
+to this:
+
+```
+"build": {
+    "builder": "@nrwl/angular:package",
+    "options": {
+        "tsConfig": "libs/manufacturers/tsconfig.lib.json",
+        "project": "libs/manufacturers/ng-package.json"
+    },
+    "configurations": {
+        "production": {
+            "tsConfig": "libs/manufacturers/tsconfig.lib.prod.json"
+        }
+    }
+},
+```
 
 ## Usage
 
