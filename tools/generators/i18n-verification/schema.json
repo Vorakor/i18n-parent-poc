@@ -11,16 +11,12 @@
                 "index": 0
             }
         },
-        "skipCheck": {
-            "type": "boolean",
-            "description": "Skip translation key check"
-        },
-        "translationFile": {
+        "parentFileName": {
             "type": "string",
-            "description": "Translation file you want to check (if not specified then a default location will be used), command assumes path is from root directory.",
+            "description": "Translation file name within parent application.  Command assumes this path is from the repository root.",
             "$default": {
                 "$source": "argv",
-                "index": 2
+                "index": 1
             }
         },
         "childFileName": {
@@ -28,7 +24,7 @@
             "description": "Translation file name from child library(s).  Please ensure this is the path from the /src folder.",
             "$default": {
                 "$source": "argv",
-                "index": 3
+                "index": 2
             }
         }
     },

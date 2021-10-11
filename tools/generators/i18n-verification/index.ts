@@ -5,8 +5,8 @@ export default async function (host: Tree, schema: any) {
     const lPackageJson = JSON.parse(await fs.readFile('./package.json', { encoding: 'utf8' }));
     const lInstalledLibs: string[] = [];
     let lTranslationJson: any = null;
-    if (schema.translationFile) {
-        lTranslationJson = JSON.parse(await fs.readFile(schema.translationFile, { encoding: 'utf8' }));
+    if (schema.parentFileName) {
+        lTranslationJson = JSON.parse(await fs.readFile(schema.parentFileName, { encoding: 'utf8' }));
     } else {
         lTranslationJson = JSON.parse(await fs.readFile('./apps/parent-poc/src/assets/translations/en.json', { encoding: 'utf8' }));
     }
