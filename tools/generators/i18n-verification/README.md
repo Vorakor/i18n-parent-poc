@@ -10,9 +10,11 @@ This tool is broken into two different kinds of verification, the first being ch
 1. Add the code into the folder above for the index.ts and schema.json files (index.ts is the script itself, while schema.json holds the command-line arguments).
 1. Add command to `package.json` as follows: `"verify-translation": "nx workspace-generator i18n-verification"`
 1. Two options for this next step:
+    - Ensure that translations exist at the following path: `./apps/<application-name>/src/assets/translations/en.json`
+    - Or change the default within the code to reflect the path where the translation files are (the default path should be somewhere around line 11 of the script in `index.ts`).
+1. Create new key in `package.json` at root, name the key `translatedLibraries` and list all of the libraries that are being imported into this application that you expect to have translation files in.
 
--   Ensure that translations exist at the following path: `./apps/<application-name>/src/assets/translations/en.json`
--   Or change the default within the code to reflect the path where the translation files are.
+-   (Optional) Either do the step above, or always pass in the libraryCheck parameter with a prefix for the script to scan through and check for translation files.
 
 ## Usage
 
