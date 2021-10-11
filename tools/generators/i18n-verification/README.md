@@ -22,7 +22,7 @@ Currently this tool is built for Nx workspaces.
 At this point the parent repo here should be pretty well setup, now to fix the children:
 
 1. Locate the `ng-package.json` file for the library / project that needs translation files, add the following line, but feel free to customize the path and file name so long as you account for it within the script: `"assets": ["./src/i18n.json"],`.
-1. Now you will need to add the translation file at that path, so add a `i18n.json` file at the library / project's `src/` root, or the other path that you decided on, so long as it is contained within src/.
+1. Now you will need to add the translation file at that path, so add a `i18n.json` file at the library / project's `src/` root, or the other path that you decided on, so long as it is contained within `src/`.
 1. Now in your library's `index.ts` file, or your project's `public-api.ts` file, add the import line to bring in the json file: `import * as keys from './i18n.json';`.
 1. Let's finish off the `index.ts` / `public-api.ts` file by adding the const export: `export const i18nKeys = Object.keys(keys).filter((k) => k !== 'default);`.
 1. Let's not forget to add a `"resolveJsonModule": true,` to your repo's `tsconfig.base.json` file.
